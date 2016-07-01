@@ -26,31 +26,81 @@ public class ShortestPath {
 			rowCoulmn = "4X5";
 		}
 		
-		String[] rowArr = new String[Integer.valueOf(rowCoulmn.split("X")[0])];
+		String[] rowLength = new String[Integer.valueOf(rowCoulmn.split("X")[0])];
 		
-		String[] colArr = new String[Integer.valueOf(rowCoulmn.split("X")[1])];
+		String[] colLength = new String[Integer.valueOf(rowCoulmn.split("X")[1])];
 		scan.close();
 		
 		
-		String[][] matrix = convertToMatrix(rowArr,colArr,strArr);
+		String[][] matrix = convertToMatrix(rowLength,colLength,strArr);
 		System.out.println(matrix);
-		getShortestPath(matrix,"GEEK");
+		getShortestPath(matrix,
+				Integer.valueOf(rowCoulmn.split("X")[0]),
+				Integer.valueOf(rowCoulmn.split("X")[1]),
+				"GEEK");
 	}
 	
-	public static void getShortestPath(String[][] matrix,String word){
+	public static void getShortestPath(String[][] matrix,int rowLength,
+			int colLength,String word){
 	
-		System.out.println("Work in Progress");
+		int rowPos = 0, colPos = 0;
+		
+		char lastLetter = matrix[rowPos][colPos].charAt(0);
+		
+		int wordLength = word.length();
+		
+		for(int i=0;i<wordLength;i++){
+			char letter = word.charAt(i);
+			
+			while(lastLetter != letter){
+				if((int)lastLetter < (int)letter){
+					
+				}else{
+					
+				}
+			}
+			
+		}
 		
 	}
 	
-	public static String[][] convertToMatrix(String[] rowArr, String[] colArr, String[] strArr){
+	
+	public int findRowPos(String[][] matrix,int rowLength,
+			int colLength,char letter){
+	
+		for(int i = 0;i<rowLength;i++){
+			if((int)matrix[rowLength][0].charAt(0) <= (int)letter 
+					&&  
+					(int)letter <= (int)matrix[rowLength][colLength].charAt(0)){
+				return i;
+			}
+		}
 		
-		String[][] matrix = new String[rowArr.length][colArr.length];
+		return -1;
+	}
+	
+	public int findColPos(String[][] matrix,int rowPos,
+			int colLength,char letter){
+	
+		for(int i = 0;i<colLength;i++){
+			if((int)matrix[rowPos][i].charAt(0) <= (int)letter 
+					&&  
+					(int)letter <= (int)matrix[rowPos][colLength].charAt(0)){
+				return i;
+			}
+		}
 		
-		for(int i=0;i<rowArr.length;i++){
-			for(int j=0;j<colArr.length;j++){
+		return -1;
+	}
+	
+	public static String[][] convertToMatrix(String[] rowLength, String[] colLength, String[] strArr){
+		
+		String[][] matrix = new String[rowLength.length][colLength.length];
+		
+		for(int i=0;i<rowLength.length;i++){
+			for(int j=0;j<colLength.length;j++){
 				
-				int index = i*colArr.length + j;
+				int index = i*colLength.length + j;
 				String s = "";
 				if(index<=strArr.length)
 					s = strArr[index];
