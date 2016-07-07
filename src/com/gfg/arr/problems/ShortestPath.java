@@ -8,7 +8,11 @@ import java.util.Scanner;
 public class ShortestPath {
 
 	public static void main(String... strings) {
-		System.out.println("Enter the alphabets");
+		
+		String[][] staticMatrix = {{"A","B","C","D","E"},{"F","G","H","I","J"},{"K","L","M","N","O"}
+		,{"P","Q","R","S","T"},{"U","V","W","X","Y"},{"Z","a","b","c","d"}}; 
+		
+		/*System.out.println("Enter the alphabets");
 		Scanner scan = new Scanner(System.in);
 		String str = "";
 		
@@ -29,15 +33,12 @@ public class ShortestPath {
 		String[] rowLength = new String[Integer.valueOf(rowCoulmn.split("X")[0])];
 		
 		String[] colLength = new String[Integer.valueOf(rowCoulmn.split("X")[1])];
-		scan.close();
+		scan.close();*/
 		
 		
-		String[][] matrix = convertToMatrix(rowLength,colLength,strArr);
-		System.out.println(matrix);
-		getShortestPath(matrix,
-				Integer.valueOf(rowCoulmn.split("X")[0]),
-				Integer.valueOf(rowCoulmn.split("X")[1]),
-				"GEEK");
+	//	String[][] matrix = convertToMatrix(rowLength,colLength,strArr);
+	//	System.out.println(matrix);
+		getShortestPath(staticMatrix,6,5,"GEEK");
 	}
 	
 	public static void getShortestPath(String[][] matrix,int rowLength,
@@ -52,45 +53,55 @@ public class ShortestPath {
 		for(int i=0;i<wordLength;i++){
 			char letter = word.charAt(i);
 			
+			int letterRowPos = findRowPos(matrix,rowLength,colLength-1,letter);
+			int letterColPos = findColPos(matrix,letterRowPos,colLength,letter);
+			
 			while(lastLetter != letter){
-				if((int)lastLetter < (int)letter){
-					
-				}else{
-					
+				if(rowPos == letterRowPos && colPos == letterColPos){
+					lastLetter = letter;
+				}else if(rowPos<letterRowPos){
+					System.out.println("Move Down");
+					rowPos++;
+				}else if(rowPos>letterRowPos){
+					System.out.println("Move Up");
+					rowPos--;
+				}else if(colPos<letterColPos){
+					System.out.println("Move Right");
+					colPos++;
+				}else if(colPos>letterColPos){
+					System.out.println("Move left");
+					colPos--;
 				}
 			}
+	
+			System.out.println("Ok");
 			
 		}
 		
 	}
 	
-	
-	public int findRowPos(String[][] matrix,int rowLength,
+	public static int findRowPos(String[][] matrix,int rowLength,
 			int colLength,char letter){
 	
 		for(int i = 0;i<rowLength;i++){
-			if((int)matrix[rowLength][0].charAt(0) <= (int)letter 
+			if((int)matrix[i][0].charAt(0) <= (int)letter 
 					&&  
-					(int)letter <= (int)matrix[rowLength][colLength].charAt(0)){
+					(int)letter <= (int)matrix[i][colLength].charAt(0)){
 				return i;
 			}
 		}
-		
-		return -1;
+		return -99;
 	}
 	
-	public int findColPos(String[][] matrix,int rowPos,
+	public static int findColPos(String[][] matrix,int letterRowPos,
 			int colLength,char letter){
 	
 		for(int i = 0;i<colLength;i++){
-			if((int)matrix[rowPos][i].charAt(0) <= (int)letter 
-					&&  
-					(int)letter <= (int)matrix[rowPos][colLength].charAt(0)){
+			if((int)matrix[letterRowPos][i].charAt(0) == (int)letter){
 				return i;
 			}
 		}
-		
-		return -1;
+		return -99;
 	}
 	
 	public static String[][] convertToMatrix(String[] rowLength, String[] colLength, String[] strArr){
