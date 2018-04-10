@@ -20,10 +20,10 @@ public class InsertionSort {
 			int j = i-1;
 			while(j >= 0 && intArr[j] > key) {
 				intArr[j + 1] = intArr[j];
-				intArr[j] = key;
+				//intArr[j] = key;
 				j--;
 			}
-			
+			intArr[j+1] = key;
 		}
 		return intArr;
 	}
