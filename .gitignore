@@ -4,3 +4,7 @@
 .project
 .settings/
 /build/
+.idea/
+ds_algo.iml
+target/
+
