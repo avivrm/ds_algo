@@ -1,5 +1,7 @@
 package com.util;
 
+import com.binaryTree.insertion.TreeNode;
+
 public interface MyUtility {
 
     static int getGCDOfTwoNo(int n, int d){
@@ -32,6 +34,37 @@ public interface MyUtility {
         if (arr[low] >= arr[mid])
             return getPivotFromArray(arr, low, mid-1);
         return getPivotFromArray(arr, mid + 1, high);
+    }
+
+    static void inOrder(TreeNode temp)
+    {
+        if (temp == null)
+            return;
+
+        inOrder(temp.getLeft());
+        System.out.print(temp.getVal()+" ");
+        inOrder(temp.getRight());
+    }
+
+
+    static void preOrder(TreeNode temp)
+    {
+        if (temp == null)
+            return;
+
+        System.out.print(temp.getVal()+" ");
+        preOrder(temp.getLeft());
+        preOrder(temp.getRight());
+    }
+
+    static void postOrder(TreeNode temp)
+    {
+        if (temp == null)
+            return;
+
+        postOrder(temp.getLeft());
+        postOrder(temp.getRight());
+        System.out.print(temp.getVal()+" ");
     }
 
 }
