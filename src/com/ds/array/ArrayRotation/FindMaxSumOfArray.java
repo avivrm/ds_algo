@@ -1,4 +1,4 @@
-package com.array.ArrayRotation;
+package com.ds.array.ArrayRotation;
 
 public class FindMaxSumOfArray {
 

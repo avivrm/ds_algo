@@ -1,4 +1,4 @@
-package com.binaryTree.insertion;
+package com.ds.binaryTree.insertion;
 
 public class TreeNode {
 

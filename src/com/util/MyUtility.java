@@ -1,6 +1,6 @@
 package com.util;
 
-import com.binaryTree.insertion.TreeNode;
+import com.ds.binaryTree.insertion.TreeNode;
 
 public interface MyUtility {
 
@@ -66,5 +66,6 @@ public interface MyUtility {
         postOrder(temp.getRight());
         System.out.print(temp.getVal()+" ");
     }
+
 
 }

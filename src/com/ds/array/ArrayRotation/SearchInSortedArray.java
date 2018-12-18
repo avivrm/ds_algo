@@ -1,4 +1,4 @@
-package com.array.ArrayRotation;
+package com.ds.array.ArrayRotation;
 
 import com.util.MyUtility;
 
