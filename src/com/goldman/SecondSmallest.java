@@ -4,7 +4,7 @@ public class SecondSmallest {
     public static int secondSmallest(int[] x) {
 
         if (x.length < 2) {
-            return (0);
+            return x[0];
         }
 
         int Smallest = Integer.MAX_VALUE; // Max 32 bit integer

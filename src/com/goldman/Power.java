@@ -7,13 +7,15 @@ public class Power {
         if(exp==0) return 1;
         if(exp==1) return base;
         int positiveExp =  (exp<0) ? exp*-1 : exp;
-        double result= (positiveExp%2==0)? power(base*base,positiveExp/2):base*power(base*base,(positiveExp-1)/2);
+        double result= ( positiveExp%2 == 0 )? power(base*base,positiveExp/2):base*power(base*base,(positiveExp-1)/2);
         return exp<0 ? 1/result:result;
     }
 
     public static boolean doTestPass() {
         double base[] = {2,2, 2.3, 0, 5.5,6.2};
         int exponent[] ={4,-3,20, 10, 0,  1};
+      //  double base[] = {2,2, 2.3, 0, 5.5,6.2};
+       // int exponent[] ={4,-3,20, 10, 0,  1};
         boolean doTestsPass = true;
         double tolerance = 0.0001;
 

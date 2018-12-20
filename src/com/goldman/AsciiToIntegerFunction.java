@@ -24,7 +24,7 @@ public class AsciiToIntegerFunction {
                 break;
             }
 
-            result = result * 10 + c - '0';
+            result = result*10 + c - '0';
         }
 
         return result * multiplier;

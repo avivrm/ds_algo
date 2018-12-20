@@ -1,6 +1,6 @@
 package com.goldman;
 
-class CountSnow
+class CountSnowPack
 {
     /*
      **  Find the amount of snow that could be captured.
