@@ -1,8 +1,12 @@
 package com.goldman;
 
+/**
+ find the median of the two sorted arrays.
+ ex. {1, 3} and {2} is 2
 
-// A Simple Merge based O(n) solution
-// to find median of two sorted arrays
+ A Simple Merge based O(n) solution
+ to find median of two sorted arrays
+ */
 
 class MedianOfSortedArrays
 {

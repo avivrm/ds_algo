@@ -1,5 +1,10 @@
 package com.goldman;
 
+/**
+31_Sub Array Exceeding Sum.java
+
+ */
+
 public class SubArrayExceedingSum {
 
     public static int subArrayExceedsSum(int arr[], int target )

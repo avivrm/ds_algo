@@ -1,5 +1,9 @@
 package com.goldman;
 
+/**
+ * Returns true if x is a power-of-10.
+ */
+
 public class PowerOf10 {
 
     public static boolean isPowerOf10(int x)

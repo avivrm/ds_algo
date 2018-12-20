@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Instructions to candidate.
+ * Implement the "put" and "contains" methods.
+ * Fix the "inOrderTraversal" method.
+ */
+
 public class SearchTree {
 
     static class BST {

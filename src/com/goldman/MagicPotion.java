@@ -1,5 +1,19 @@
 package com.goldman;
 
+/**
+Question:
+Combine ingredients in a specific order, any of which may be repeated
+
+As an example, consider the following
+(A,B,C,D) in 11 steps: A, B, A, B, C, A, B, A, B, C, E
+
+Encode the string above using only 6 characters: A,B,*,C,*,E
+
+Implement function that takes as input an un-encoded potion and returns the
+minimum number of characters required to encode
+
+*/
+
 public class MagicPotion
 {
     private static Integer minimalSteps( String ingredients )
@@ -38,17 +52,5 @@ public class MagicPotion
         {
             System.out.println( "Fail" );
         }
-
-
-        /*MagicPotion mp = new MagicPotion();
-
-        if ( solution.doTestsPass( ) )
-        {
-            System.out.println( "All tests passed" );
-        }
-        else
-        {
-            System.out.println( "Tests failed" );
-        }*/
     }
 }

@@ -1,5 +1,10 @@
 package com.goldman;
 
+/**
+ * public static String reverseStr( String str )
+ * Example: reverseStr(str) where str is "abcd" returns "dcba".
+ */
+
 public class ReverseString{
     public static String reverseStr( String str ){
         if( str.length() == 0 )

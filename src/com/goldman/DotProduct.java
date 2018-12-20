@@ -1,5 +1,10 @@
 package com.goldman;
 
+/**
+ *
+ * Given two arrays of integers, returns the dot product of the arrays
+ */
+
 public class DotProduct {
 
     public static int dotProduct( int[] array1, int[] array2 ) throws IllegalArgumentException {

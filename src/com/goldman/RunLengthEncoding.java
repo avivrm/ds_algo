@@ -1,5 +1,16 @@
 package com.goldman;
 
+
+/**
+ * Implement a run length encoding function.
+ * For a string input the function returns output encoded as follows:
+ *
+ * "a"     -> "a1"
+ * "aa"    -> "a2"
+ * "aabbb" -> "a2b3"
+ */
+
+
 public class RunLengthEncoding {
 
     public static String rle(String input) {

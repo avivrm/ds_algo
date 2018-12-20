@@ -1,5 +1,13 @@
 package com.goldman;
 
+/**
+  Input two words returns the shortest distance between their two midpoints in number of characters
+  Words can appear multiple times in any order and should be case insensitive.
+
+  E.g. for the document="Example we just made up"
+  shortestDistance( document, "we", "just" ) == 4
+ */
+
 public class DistanceBt2words {
     public static double shortestDistance(String document, String word1, String word2) {
         String[] words = document.split("[,. ]");

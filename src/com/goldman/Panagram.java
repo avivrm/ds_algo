@@ -3,25 +3,38 @@ package com.goldman;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+
+/**
+ * Pangram Finder
+ *
+ * The sentence "The quick brown fox jumps over the lazy dog" contains
+ * every single letter in the alphabet[a-z]. Such sentences are called pangrams.
+ * Write a function findMissingLetters, which takes a String `sentence`,
+ * and returns all the letters it is missing
+ *
+ */
+
 class Panagram {
 
     private static class PanagramDetector {
-        private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+        static SortedSet<Character> sortedLetters = new TreeSet<Character>();
+
+        static{
+            String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+            for (int i = 0; i < ALPHABET.length(); i++) {
+                sortedLetters.add(ALPHABET.charAt(i));
+            }
+        }
 
         public String findMissingLetters(String sentence) {
-            SortedSet<Character> missing = new TreeSet<Character>();
-            for (int i = 0; i < ALPHABET.length(); i++) {
-                missing.add(new Character(ALPHABET.charAt(i)));
-            }
-
+            SortedSet<Character> letters  = new TreeSet<>(sortedLetters);
             String s = sentence.toLowerCase();
-
             for (int i = 0; i < s.length(); i++) {
-                missing.remove(new Character(s.charAt(i)));
+                letters.remove(s.charAt(i));
             }
 
             StringBuilder sb = new StringBuilder();
-            for (Character c : missing) {
+            for (Character c : letters) {
                 sb.append(c.charValue());
             }
 

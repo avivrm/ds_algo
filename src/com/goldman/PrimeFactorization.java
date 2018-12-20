@@ -3,6 +3,13 @@ package com.goldman;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Return an array containing prime numbers whose product is x
+ * Examples:
+ * primeFactorization( 6 ) == [2,3]
+ * primeFactorization( 5 ) == [5]
+ */
+
 public class PrimeFactorization
 {
     public static ArrayList<Integer> primeFactorization(int x)

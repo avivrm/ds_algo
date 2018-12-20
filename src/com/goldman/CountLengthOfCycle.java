@@ -3,6 +3,15 @@ package com.goldman;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *
+ * You have an integer array.
+ * Starting from arr[startIndex], follow each element to the index it points to.
+ * Continue to do this until you find a cycle.
+ * Return the length of the cycle. If no cycle is found return -1
+ *
+ */
+
 public class CountLengthOfCycle {
 
     public static int countLengthOfCycle( int[] arr, int startIndex ) {

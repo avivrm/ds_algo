@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringJoiner;
 
+/**
+ * Given a log file, return IP address(es) which accesses the site most often.
+ */
+
 public class ApacheLog {
 
     public static String findTopIpaddress(String[] lines) {

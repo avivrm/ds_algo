@@ -4,6 +4,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *
+ *  e.g.
+ *      for the input: "abbbccda" the longest uniform substring is "bbb" (which starts at index 1 and is 3 characters long).
+ */
+
 public class LongestUniformString {
 
     private static final Map<String, int[]> testCases = new HashMap<String, int[]>();

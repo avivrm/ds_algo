@@ -1,6 +1,11 @@
 package com.goldman;
 
-public class SqaureRoot {
+/**
+ *   double squareRoot( double x )
+ *
+ */
+
+public class SquareRoot {
 
     public static double squareRoot(double x) {
         double threshold = 0.001;

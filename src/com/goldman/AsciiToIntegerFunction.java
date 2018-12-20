@@ -1,5 +1,11 @@
 package com.goldman;
 
+/**
+         Takes a string str and returns the int value represented by
+         the string.
+         For example, atoi("42") returns 42.
+ */
+
 public class AsciiToIntegerFunction {
 
     public static int atoi(String str)

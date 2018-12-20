@@ -1,5 +1,10 @@
 package com.goldman;
 
+/**
+ * Given two fractions passed in as int arrays,
+ * returns the fraction which is result of adding the two input fractions.
+ */
+
 public class AddFraction {
 
     public static int[] addFractions( int[] fraction1, int[] fraction2 ){

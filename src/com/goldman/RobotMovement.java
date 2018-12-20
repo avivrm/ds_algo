@@ -2,6 +2,15 @@ package com.goldman;
 
 import java.util.Arrays;
 
+/**
+        Implement the 'walk' method.
+        Assume robot inital position is (0,0).
+        walk method take path where each character corresponds to a movement of the robot.
+        The robot moves up, down, left, and right represented by the characters 'U', 'D', 'L', and 'R'
+        Ignore other characters.
+
+ */
+
 public class RobotMovement {
 
     public static Integer[] walk( String path ) {

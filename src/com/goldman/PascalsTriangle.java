@@ -3,6 +3,25 @@ package com.goldman;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ **  Below formation is called Pascals Triangle.
+ **
+ **  Example:
+ **               1
+ **              1 1
+ **             1 2 1
+ **            1 3 3 1
+ **           1 4 6 4 1
+ **         1 5 10 10 5 1
+ **        1 6 15 20 15 6 1
+ **
+ **  Complete the 'pascal' function below so that given a
+ **  col and a row it will return the value in that positon.
+ **
+ **  Example, pascal(1,2) should return 2
+ **
+ */
+
 public class PascalsTriangle {
 
     public static Map<Integer, Map<Integer, Integer>> pascalHash
@@ -19,7 +38,7 @@ public class PascalsTriangle {
             }
             else{
                 pascalValue = pascal(col, row - 1) + pascal(col - 1, row - 1);
-                pascalHash.get(col).put(row,pascalValue);
+                //pascalHash.get(col).put(row,pascalValue);
             }
         }
         else{

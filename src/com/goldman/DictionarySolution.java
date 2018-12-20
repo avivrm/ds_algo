@@ -4,23 +4,33 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-class Dictionary {
-    private Map<String, List<String>> sortedLettersToWords = new HashMap<>();
+/**
 
-    public Dictionary(String[] entries) {
-        for(String entry : entries) {
-            String sortedLetters = Stream.of(entry.split("")).sorted().collect(Collectors.joining());
-            sortedLettersToWords.computeIfAbsent(sortedLetters, list -> new LinkedList<String>());
-            sortedLettersToWords.get(sortedLetters).add(entry);
+    Given a a string of letters and a dictionary, the function longestWord should
+     find the longest word or words in the dictionary that can be made from the letters
+     Input: letters = "oet", dictionary = {"to","toe","toes"}
+     Output: {"toe"}
+
+ */
+
+public class DictionarySolution {
+
+    class Dictionary {
+        private Map<String, List<String>> sortedLettersToWords = new HashMap<>();
+
+        public Dictionary(String[] entries) {
+            for(String entry : entries) {
+                String sortedLetters = Stream.of(entry.split("")).sorted().collect(Collectors.joining());
+                sortedLettersToWords.computeIfAbsent(sortedLetters, list -> new LinkedList<String>());
+                sortedLettersToWords.get(sortedLetters).add(entry);
+            }
+        }
+
+        public List<String> getEntriesForSortedLetters(String sortedLetters) {
+            return sortedLettersToWords.get(sortedLetters);
         }
     }
 
-    public List<String> getEntriesForSortedLetters(String sortedLetters) {
-        return sortedLettersToWords.get(sortedLetters);
-    }
-}
-
-public class DictionarySolution {
     public static Set<String> combinationsDroppingOneLetter(Set<String> lettersCombinations) {
         Set<String> oneLetterLessSet = new HashSet<>();
         for (String letters : lettersCombinations) {
@@ -68,7 +78,8 @@ public class DictionarySolution {
         result = result && testDroppingLetter(Arrays.asList("ab", "bb"),Arrays.asList("a", "b"));
         result = result && testDroppingLetter(Arrays.asList("a", "b"),Arrays.asList());
 
-        Dictionary dict = new Dictionary(new String[]{"to", "toe", "toes", "doe", "dog", "god", "dogs", "book", "banana"});
+        DictionarySolution outerObj = new DictionarySolution();
+        Dictionary dict = (outerObj).new Dictionary(new String[]{"to", "toe", "toes", "doe", "dog", "god", "dogs", "book", "banana"});
 
         result = result && new HashSet<String>(Arrays.asList("toe")).equals(longestWord("toe", dict));
         result = result && new HashSet<String>(Arrays.asList("toes", "dogs")).equals(longestWord("osetdg", dict));

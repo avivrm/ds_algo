@@ -5,11 +5,18 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Vector;
 
+/**
+ *      The main function that prints the
+ *      arrangement with the largest value.
+ *      The function accepts a vector of strings
+ *
+ *      e.g {"1","34","3","98","9","76","45","4"}  -> output should be 998764543431
+ *
+ */
+
 class PrintLargestNoFromArray {
 
-    // The main function that prints the
-    // arrangement with the largest value.
-    // The function accepts a vector of strings
+
     static void printLargest(Vector<String> arr){
 
         Collections.sort(arr, new Comparator<String>(){

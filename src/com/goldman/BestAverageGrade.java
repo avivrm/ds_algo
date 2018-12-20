@@ -5,6 +5,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+  Find the best average grade.
+  Given a list of student test scores
+  Each student may have more than one test score in the list.
+ */
+
 public class BestAverageGrade {
 
     public static Integer bestAverageGrade(String[][] scores)

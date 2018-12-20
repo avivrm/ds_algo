@@ -1,5 +1,9 @@
 package com.goldman;
 
+/**
+ *  Given base and integer exponent, compute value of base raised to the power of exponent.
+ */
+
 public class Power {
 
     public static double power(double base, int exp) {

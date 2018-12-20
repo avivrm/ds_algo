@@ -3,8 +3,19 @@ package com.goldman;
 import java.util.Arrays;
 import java.util.Comparator;
 
+/**
+ * This program prints set of anagrams together in given string
+ *
+ * eg.
+ * setOfAnagrams("cat dog tac sat tas god dog") should print "cat tac dog god dog sat tas"
+ *
+ */
 
-/*
+
+/**  ALGO
+     ---
+     ---
+
 1) Create two auxiliary arrays index[] and words[]. Copy all given words to words[] and store the original indexes in index[]
 index[]:  0   1   2   3   4
 words[]: cat dog tac god act

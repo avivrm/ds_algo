@@ -3,6 +3,12 @@ package com.goldman;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * Finds the first character that does not repeat anywhere in the input string
+ * Given "apple", the answer is "a"
+ * Given "racecars", the answer is "e"
+ **/
+
 public class FirstNonRepeating {
 
     public static char findFirst(String str)

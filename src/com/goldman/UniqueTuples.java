@@ -3,6 +3,13 @@ package com.goldman;
 import java.util.Arrays;
 import java.util.HashSet;
 
+
+/**
+Input - abbccde
+output - "ab", "bb", "bc", "cc", "cd", "de"
+ */
+
+
 public class UniqueTuples {
 
     public static HashSet<String> uniqueTuples(String input, int len) throws IllegalArgumentException {
