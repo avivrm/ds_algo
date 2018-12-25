@@ -2,8 +2,8 @@ package com.practiceGoldman;
 
 class MedianOfSortedArrays
 {
-    static int []a = new int[]{1,3};
-    static int []b = new int[]{2};
+    static int []a = new int[]{2,3,5,8};
+    static int []b = new int[]{10,12,14,16,18,20};
 
     // Function to find max
     static int maximum(int a, int b)

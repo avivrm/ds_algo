@@ -28,10 +28,13 @@ public class PascalsTriangle {
             = new HashMap<Integer,Map<Integer,Integer>>();
 
     public static  int pascal(int col, int row){
+
         if(col == 0 || col == row) {
             return 1;
         }
+
         int pascalValue = 0;
+
         if(pascalHash.containsKey(col)){
             if(pascalHash.get(col).containsKey(row)){
                 return pascalHash.get(col).get(row);

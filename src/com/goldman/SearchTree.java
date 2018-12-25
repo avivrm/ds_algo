@@ -14,6 +14,12 @@ public class SearchTree {
 
     static class BST {
 
+        private static class Node {
+            Integer val;
+            Node left;
+            Node right;
+        }
+
         private Node root;
 
         public BST() {
@@ -73,12 +79,6 @@ public class SearchTree {
             inOrderTraversal(node.left, acc);
             acc.add(node.val);
             inOrderTraversal(node.right, acc);
-        }
-
-        private static class Node {
-            Integer val;
-            Node left;
-            Node right;
         }
     }
 

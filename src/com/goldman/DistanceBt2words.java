@@ -16,6 +16,7 @@ public class DistanceBt2words {
         double shortest = document.length();
         double word1Loc = 0;
         double word2Loc = 0;
+
         for(String word : words) {
             if(word.equalsIgnoreCase(word1)) {
                 word1Loc = index + (word.length()/2d);

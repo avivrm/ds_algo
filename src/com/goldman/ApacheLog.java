@@ -20,12 +20,15 @@ public class ApacheLog {
         });
 
         StringJoiner sj = new StringJoiner(",");
+
         final Integer max = counter.entrySet().stream()
                 .max((p1, p2) -> p1.getValue() > p2.getValue() ? 1 : -1).get()
                 .getValue();
+
         counter.entrySet().stream().filter(p -> max == p.getValue())
                 .sorted((p1, p2) -> p1.getValue() > p2.getValue() ? 1 : -1)
                 .forEach(p -> sj.add(p.getKey()));
+
         return sj.toString();
 
     }

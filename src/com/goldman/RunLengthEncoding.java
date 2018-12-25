@@ -26,6 +26,7 @@ public class RunLengthEncoding {
 
         for(int i = 0; i < input.length(); i++){
             char current = input.charAt(i);
+
             if(lastSeen == current){
                 count++;
             } else {
@@ -36,6 +37,7 @@ public class RunLengthEncoding {
                 lastSeen = current;
             }
         }
+
         result.append(lastSeen).append(count);
         return result.toString();
     }

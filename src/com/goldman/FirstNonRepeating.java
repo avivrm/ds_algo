@@ -27,7 +27,7 @@ public class FirstNonRepeating {
             }
         }
 
-        throw new RuntimeException("didn't find any non repeated Character");
+        return '0';
 
     }
 

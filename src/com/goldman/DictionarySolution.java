@@ -21,7 +21,9 @@ public class DictionarySolution {
         public Dictionary(String[] entries) {
             for(String entry : entries) {
                 String sortedLetters = Stream.of(entry.split("")).sorted().collect(Collectors.joining());
+
                 sortedLettersToWords.computeIfAbsent(sortedLetters, list -> new LinkedList<String>());
+
                 sortedLettersToWords.get(sortedLetters).add(entry);
             }
         }
@@ -33,12 +35,17 @@ public class DictionarySolution {
 
     public static Set<String> combinationsDroppingOneLetter(Set<String> lettersCombinations) {
         Set<String> oneLetterLessSet = new HashSet<>();
+
         for (String letters : lettersCombinations) {
+
             if (letters.length() > 1) {
                 for (int i=0; i<letters.length(); i++) {
+
                     oneLetterLessSet.add(letters.substring(0, i) + letters.substring(i+1,letters.length()));
+
                 }
             }
+
         }
         return oneLetterLessSet;
     }
@@ -56,6 +63,7 @@ public class DictionarySolution {
                     .filter(l -> l!=null)
                     .flatMap(l -> l.stream())
                     .collect(Collectors.toList());
+
             if (allFoundInDict.size() > 0) {
                 return new HashSet<String>(allFoundInDict);
             }

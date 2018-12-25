@@ -74,6 +74,7 @@ class CountSnowPack
     {
         boolean result = true;
         result &= computeSnowpack(new Integer[]{0,1,3,0,1,2,0,4,2,0,3,0}) == 13;
+        result &= computeSnowpack(new Integer[]{3, 0, 0, 2, 0, 4}) == 10;
 
         return result;
     }

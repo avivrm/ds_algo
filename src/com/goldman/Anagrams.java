@@ -2,6 +2,8 @@ package com.goldman;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * This program prints set of anagrams together in given string
@@ -79,7 +81,7 @@ public class Anagrams {
     }
 
     // Given a list of words in wordArr[],
-    static void printAnagramsTogether(String wordArr[],
+    static List<String> printAnagramsTogether(String wordArr[],
                                       int size)
     {
         // Step 1: Create a copy of all words present
@@ -104,8 +106,13 @@ public class Anagrams {
         // but these words are changed. Use the index
         // member of word struct to get the corresponding
         // original word
+        List<String> anagrams = new LinkedList<>();
         for (i = 0; i < size; ++i)
+        {
             System.out.print(wordArr[dupArray.array[i].index] + " ");
+            anagrams.add(wordArr[dupArray.array[i].index]);
+        }
+        return anagrams;
     }
 
     // Driver program to test above functions
@@ -114,5 +121,19 @@ public class Anagrams {
         String wordArr[] = { "cat", "dog", "tac", "god", "act" };
         int size = wordArr.length;
         printAnagramsTogether(wordArr, size);
+
+
+        /*String[] expected = {"cat", "tac", "act", "dog", "god"};
+
+
+        boolean result = true;
+        result &= Arrays.equals(expected, printAnagramsTogether(wordArr, size).toArray());
+
+        if(result){
+            System.out.println("All test passed");
+        }else{
+            System.out.println("All test failed");
+        }*/
+
     }
 }

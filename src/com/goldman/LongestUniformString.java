@@ -17,21 +17,23 @@ public class LongestUniformString {
     static int[] longestUniformSubstring(String input){
         int longestStart = -1;
         int longestLength = 0;
-        int ix = 1;
+        int count = 1;
         int length = input.length();
-        while(ix < length) {
-            int start = ix - 1;
+
+        while(count < length) {
+            int start = count - 1;
             int currentLength = 1;
-            while(ix < length && input.charAt(ix) == input.charAt(ix - 1) ){
-                ix++;
+            while(count < length && input.charAt(count) == input.charAt(count - 1) ){
+                count++;
                 currentLength++;
             }
             if(currentLength > longestLength){
                 longestStart = start;
                 longestLength = currentLength;
             }
-            ix++;
+            count++;
         }
+        
         return new int[]{ longestStart, longestLength };
     }
 

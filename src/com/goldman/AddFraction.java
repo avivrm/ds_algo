@@ -31,6 +31,7 @@ public class AddFraction {
         }
 
         int gcd = findGCD(resultNumerator, resultDenominator);
+
         return( new int[]{ resultNumerator / gcd, resultDenominator / gcd } );
     }
 

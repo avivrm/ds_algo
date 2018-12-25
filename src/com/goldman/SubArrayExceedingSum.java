@@ -1,5 +1,7 @@
 package com.goldman;
 
+import java.util.Arrays;
+
 /**
 31_Sub Array Exceeding Sum.java
 
@@ -49,7 +51,7 @@ public class SubArrayExceedingSum {
     public static void doTestsPass()
     {
         boolean result = true;
-        int[] arr = { 1, 2, 3, 4 };
+        int[] arr = {1,2,3,4};
         result = result && subArrayExceedsSum( arr, 6 ) == 2;
         result = result && subArrayExceedsSum( arr, 12 ) == -1;
         result = result && subArrayExceedsSum( arr, 10 ) == 4;
