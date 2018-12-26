@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
 import java.util.*;
 
@@ -69,14 +69,6 @@ public class TrainSolutionBFS {
         }
     }
 
-    /**
-     * class TrainMap
-     * <p>
-     * Respresents whole rail network - consists of number of the Station objects.
-     * Stations in the map are bi-directionally connected. Distance between any 2 stations
-     * is of same constant distance unit. This implies that shortest distance between any
-     * 2 stations depends only on number of stations in between
-     */
     private static class TrainMap {
 
         private HashMap<String, Station> stations;
@@ -156,13 +148,16 @@ public class TrainSolutionBFS {
 
                 for(int i=0; i < currentStation.getNeighbours().size(); i++) {
                     Station nextStation = currentStation.getNeighbours().get(i);
-                    if(visitedSet.contains(nextStation)) continue;
+
+                    if(visitedSet.contains(nextStation))
+                        continue;
 
                     visitedSet.add(nextStation);
                     queue.add(nextStation);
                     predecessor.put(nextStation, currentStation);
 
-                    if(nextStation.equals(destination)) return true;
+                    if(nextStation.equals(destination))
+                        return true;
                 }
             }
 
@@ -179,8 +174,6 @@ public class TrainSolutionBFS {
 
 
     public static boolean doTestsPass() {
-        // todo: implement more tests, please
-        // feel free to make testing more elegant
         TrainMap trainMap = new TrainMap();
 
         trainMap.addStation("King's Cross St Pancras").addStation("Angel").addStation("Old Street").addStation("Moorgate")

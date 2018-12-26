@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,8 +17,10 @@ public class PrimeFactorization
     public static ArrayList<Integer> primeFactorization(int x)
     {
         ArrayList<Integer> factors = new ArrayList<Integer>();
+
         if( x < 2 )
             return factors;
+
         for(int i = 2; i <= x; i++)
         {
             while( x % i == 0 )

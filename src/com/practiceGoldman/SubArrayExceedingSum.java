@@ -1,8 +1,6 @@
-package com.goldman;
+package com.practiceGoldman;
 
-import java.util.Arrays;
-
-                        // 30. Sub Array Exceeding Sum //
+// 30. Sub Array Exceeding Sum //
 
 public class SubArrayExceedingSum {
 
@@ -19,16 +17,17 @@ public class SubArrayExceedingSum {
         int currsum = arr[ 0 ];
         while( true )
         {
-            if( currsum >= target )
-                if( i == j )
-                    return( 1 );
-                else
-                {
-                    if( j - i + 1 < length )
+            if( currsum >= target ) {
+                if (i == j)
+                    return (1);
+                else {
+                    if (j - i + 1 < length)
                         length = j - i + 1;
-                    currsum -= arr[ i ];
+
+                    currsum -= arr[i];
                     i++;
                 }
+            }
             else
             {
                 j++;

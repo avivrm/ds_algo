@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
                                     //   1. Add Fraction  //
 
@@ -39,17 +39,15 @@ public class AddFraction {
 
     public static int findGCD( int a, int b ){
 
-        // Everything divides 0
         if (a == 0 || b == 0)
             return 0;
 
-        // base case
         if (a == b)
             return a;
 
-        // a is greater
         if (a > b)
             return findGCD(a-b, b);
+
         return findGCD(a, b-a);
     }
 

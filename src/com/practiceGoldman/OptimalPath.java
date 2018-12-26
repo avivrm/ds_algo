@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
                               // 15. Optimal Path //
 
@@ -41,8 +41,10 @@ public class OptimalPath {
             {
                 if(row < grid.length-1 && col > 0)
                     grid[row][col] += Math.max(grid[row+1][col], grid[row][col-1]);
+
                 else if(row < grid.length-1)
                     grid[row][col] += grid[row+1][col];
+
                 else if(col > 0)
                     grid[row][col] += grid[row][col-1];
             }

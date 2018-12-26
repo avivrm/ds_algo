@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
 import java.util.Arrays;
 import java.util.HashMap;

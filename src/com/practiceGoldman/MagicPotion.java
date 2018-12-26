@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
                               // 13. Magic Potion //
 
@@ -35,7 +35,8 @@ public class MagicPotion
             dp[i] = Math.min(dp[i], dp[i - 1] + 1);
 
             if (2*i + 1 < n
-                    && ingredients.substring(0, i + 1).equals(ingredients.substring(i + 1, 2*i + 2))) {
+                    && ingredients.substring(0, i + 1).equals(ingredients.substring(i + 1, 2*i + 2)))
+            {
                 dp[2*i + 1] = dp[ i ] + 1;
             }
         }

@@ -1,9 +1,10 @@
-package com.goldman;
+package com.practiceGoldman;
 
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
                         // 8. Dictionary //
+
 /**
 
     Given a a string of letters and a dictionary, the function longestWord should
@@ -20,13 +21,16 @@ public class DictionarySolution {
 
         public Dictionary(String[] entries) {
             for(String entry : entries) {
-                String sortedLetters = Stream.of(entry.split("")).sorted().collect(Collectors.joining());
+                String sortedLetters = Stream.of(entry.split(""))
+                        .sorted()
+                        .collect(Collectors.joining());
 
                 sortedLettersToWords.computeIfAbsent(sortedLetters, list -> new LinkedList<String>());
 
                 sortedLettersToWords.get(sortedLetters).add(entry);
             }
         }
+
 
         public List<String> getEntriesForSortedLetters(String sortedLetters) {
             return sortedLettersToWords.get(sortedLetters);
@@ -51,13 +55,13 @@ public class DictionarySolution {
     }
 
     public static Set<String> longestWord(String letters, Dictionary dictionary) {
-        // To support ? wild card could expand all possibilites here.  A better solution would be Tree/Trie based
-        // Set with one entry of letters sorted
         Set<String> considerLettersSet = new HashSet<>(
-                Arrays.asList(Stream.of(letters.split("")).sorted().reduce("", String::concat)));
+                        Arrays.asList(Stream.of(letters.split(""))
+                        .sorted()
+                        .reduce("", String::concat))
+        );
 
         while (considerLettersSet.size() > 0) {
-            // Get list of words in dictionary that match any of the set of sorted letters
             List<String> allFoundInDict = considerLettersSet.stream()
                     .map(lets -> dictionary.getEntriesForSortedLetters(lets))
                     .filter(l -> l!=null)
@@ -67,7 +71,7 @@ public class DictionarySolution {
             if (allFoundInDict.size() > 0) {
                 return new HashSet<String>(allFoundInDict);
             }
-            // Next time round loop will consider combinations of sorted letters with one less character
+
             considerLettersSet = combinationsDroppingOneLetter(considerLettersSet);
         }
         return new HashSet<>();

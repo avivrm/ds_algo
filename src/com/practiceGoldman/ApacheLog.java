@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -15,9 +15,12 @@ public class ApacheLog {
 
     public static String findTopIpaddress(String[] lines) {
         Map<String, Integer> counter = new HashMap<>();
+
         Arrays.stream(lines).forEach((line) -> {
             String ipAddress = line.split(" ")[0];
+
             Integer count = counter.getOrDefault(ipAddress, 0);
+
             counter.put(ipAddress, count + 1);
         });
 
@@ -32,9 +35,7 @@ public class ApacheLog {
                 .forEach(p -> sj.add(p.getKey()));
 
         return sj.toString();
-
     }
-
 
 
     public static void main(String[] args) {

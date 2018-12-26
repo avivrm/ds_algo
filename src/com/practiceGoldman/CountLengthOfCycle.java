@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,8 +20,11 @@ public class CountLengthOfCycle {
         Map<Integer, Integer> visited = new HashMap<>();
         int count = 1;
         int index = startIndex;
+
         while(!visited.containsKey(index)){
-            if(arr[index] > arr.length) return -1;
+            if(arr[index] > arr.length)
+                return -1;
+
             visited.put(index, count);
             count++;
             index = arr[index];

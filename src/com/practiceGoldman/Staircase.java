@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,6 +33,7 @@ public class Staircase {
         if(n == 3) return 4;
 
         ArrayList<Integer> counts = new ArrayList<>(Arrays.asList(0, 1, 2, 4));
+
         for(int i = 4; i <= n; ++i)
         {
             counts.add(counts.get(i - 1) + counts.get(i - 2) + counts.get(i - 3));

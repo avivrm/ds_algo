@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
                                 // 26. Second Smallest //
 
@@ -9,19 +9,20 @@ public class SecondSmallest {
             return x[0];
         }
 
-        int Smallest = Integer.MAX_VALUE; // Max 32 bit integer
-        int SecSmallest = Integer.MAX_VALUE;
+        int smallest = Integer.MAX_VALUE;
+        int secSmallest = Integer.MAX_VALUE;
         int Elem;
+
         for (int i = 0; i < x.length; i++) {
             Elem = x[i];
-            if (Elem < Smallest) {
-                SecSmallest = Smallest;
-                Smallest = Elem;
-            } else if (Elem < SecSmallest) {
-                SecSmallest = Elem;
+            if (Elem < smallest) {
+                secSmallest = smallest;
+                smallest = Elem;
+            } else if (Elem < secSmallest) {
+                secSmallest = Elem;
             }
         }
-        return (SecSmallest);
+        return (secSmallest);
     }
 
     public static void main(String args[]) {

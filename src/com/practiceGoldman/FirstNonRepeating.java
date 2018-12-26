@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -28,9 +28,7 @@ public class FirstNonRepeating {
                 return entry.getKey();
             }
         }
-
         return '0';
-
     }
 
 

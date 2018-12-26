@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
                         // 22. Reverse String //
 

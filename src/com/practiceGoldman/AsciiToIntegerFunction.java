@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
                             // 4 .   atoi :: ASCII To Integer Function //
 

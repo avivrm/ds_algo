@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
                             // 27. Smallest Number //
 
@@ -23,6 +23,7 @@ public class SmallestNumber {
 
         if (mid < right && a[mid] > a[mid + 1])
             return a[mid + 1];
+
         if (mid > left && a[mid - 1] > a[mid])
             return a[mid];
 

@@ -1,4 +1,4 @@
-package com.goldman;
+package com.practiceGoldman;
 
                                 // 19. Power Of 10 //
 
