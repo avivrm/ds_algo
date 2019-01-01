@@ -2,6 +2,7 @@ package com.practiceGoldman;
 
                                     //   1. Add Fraction  //
 
+
 /**
  * Given two fractions passed in as int arrays,
  * returns the fraction which is result of adding the two input fractions.
@@ -10,8 +11,9 @@ package com.practiceGoldman;
 public class AddFraction {
 
     public static int[] addFractions( int[] fraction1, int[] fraction2 ){
+
         if( ( fraction1.length != 2 ) || ( fraction2.length != 2 ) ) {
-            throw new IllegalArgumentException( "Arguments passed should be two-element arrays" );
+            return new int[]{ 0 , 0 };
         }
 
         int numerator1 = fraction1[ 0 ];
@@ -23,14 +25,17 @@ public class AddFraction {
         int resultDenominator = 1;
 
         if( denominator1 == 0 || denominator2 == 0 ) {
-            throw new IllegalArgumentException( "Denominator in at least one of the input fractions is zero, which is not allowed." );
+            return new int[]{ 0, 0 };
         } else {
             resultNumerator = ( numerator1 * denominator2 ) + ( numerator2 * denominator1 );
             resultDenominator = ( denominator1 * denominator2 );
         }
+
+        // after addition if numerator will become 0
         if( resultNumerator == 0 ) {
             return ( new int[]{ 0, 1 } );
         }
+
 
         int gcd = findGCD(resultNumerator, resultDenominator);
 
