@@ -48,7 +48,7 @@ public class SubArrayExceedingSum {
     public static void doTestsPass()
     {
         boolean result = true;
-        int[] arr = {1,2,3,4};
+        /*int[] arr = {1,2,3,4};
         result = result && subArrayExceedsSum( arr, 6 ) == 2;
         result = result && subArrayExceedsSum( arr, 12 ) == -1;
         result = result && subArrayExceedsSum( arr, 10 ) == 4;
@@ -56,7 +56,10 @@ public class SubArrayExceedingSum {
 
         int[] arr2 = {};
         result = result && subArrayExceedsSum( arr2, 0 ) == 0;
-        result = result && subArrayExceedsSum( arr2, 2 ) == -1;
+        result = result && subArrayExceedsSum( arr2, 2 ) == -1;*/
+
+        int[] arr3 = {1, 4, 45, 6, 10, 19};
+        result = result && subArrayExceedsSum( arr3, 51 ) == 3;
 
         if( result )
         {
